@@ -33,7 +33,7 @@
 - (id)transformValue:(id)value forDynamicAttribute:(DCDynamicAttribute *)attribute dictionary:(NSDictionary *)dictionary parentObject:(id)parentObject {
     BOOL validDouble = [self validDouble:[NSString stringWithFormat:@"%@", value]];
     if(validDouble){
-        return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];
+        return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]/1000];
     }else{
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = self.pattern;
